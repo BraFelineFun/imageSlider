@@ -1,0 +1,146 @@
+body {
+  font-family: "Roboto", sans-serif;
+  overflow: hidden;
+}
+
+.slider_container {
+  position: absolute;
+  top: 0%;
+  width: 100vw;
+  height: 100vh;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+  z-index: 1;
+}
+
+.slide {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+.slide_title {
+  display: inline-block;
+  color: white;
+  font-size: 36px;
+  margin-bottom: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.slide_subtitle {
+  color: white;
+  display: inline-block;
+  font-size: 20px;
+}
+.slide_text {
+  background-color: #afb18c;
+  z-index: 1;
+  width: 40vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.slide_img {
+  position: absolute;
+  right: -10vw;
+  z-index: 0;
+  max-width: 100vw;
+  height: 100vh;
+  background: center no-repeat url(https://www.hermes-parkerconcrete.com/wp-content/uploads/2020/11/services-no-image.png);
+  background-size: cover;
+}
+.slide_img img {
+  min-width: 76vw;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center center;
+     object-position: center center;
+}
+.slide_arrowbox {
+  position: absolute;
+  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 6%;
+  height: 5%;
+  top: 50%;
+  left: 37%;
+  background-color: #fffbf4;
+  border-radius: 20px;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+}
+.slide_arrowbox .--down {
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
+}
+.slide_arrowbox .arrow {
+  width: 3vw;
+  height: 3vh;
+  cursor: pointer;
+}
+
+.backwards{
+  display: none;
+  position: absolute;
+  right: 10%;
+  top: 10%;
+  background-color: #ff8b8b;
+  border-radius: 20%;
+
+}
+.backwards img{
+  width: 3vw;
+  height: 3vh;
+  cursor: pointer;
+}
+
+.text_text {
+  display: block;
+  letter-spacing: 1.5px;
+  transition-duration: 0.5s;
+  opacity: 0;
+}
+
+.text_container {
+  z-index: 0;
+  max-width: 700px;
+  margin: 50vh auto 0;
+  font-size: 30px;
+
+  /*-webkit-transition: 0.2s all ease-in 0.5s;*/
+  /*transition: 0.2s opacity ease-in 0.5s;*/
+  /*-webkit-transform: translate(0, 10vh);*/
+  /*        transform: translate(0, 10vh);*/
+
+}
+
+.--viewed {
+  display: block;
+  opacity: 1;
+}
