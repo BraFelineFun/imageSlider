@@ -5,3 +5,5 @@ works well only with a desktops for now
 CSS is generated with SASS(SCSS) preprocessor
 
 using debounce function to prevent multiple scrolling
+
+deployed version: https://brafelinefun.github.io/imageSlider/
