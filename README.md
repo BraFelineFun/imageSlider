@@ -1,6 +1,6 @@
 # imageSlider
 
-works well only with a desktops for now
+works well with both desktops and touch devices
 
 CSS is generated with SASS(SCSS) preprocessor
 
