@@ -144,11 +144,10 @@ body {
   .slide_title {
     margin: 0 15px 0 0;
   }
-  .slide_img {
+  .slide_img img {
     position: static;
     right: 0;
     width: 100vw;
-    height: 70vh;
   }
 }
 .touch_img img {

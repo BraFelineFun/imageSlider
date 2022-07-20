@@ -1,16 +1,11 @@
 const upBtns = document.querySelectorAll(".--up");
 const downBtn = document.querySelector(".--down");
 const slides = document.querySelectorAll(".slide");
-const slide_img = document.querySelectorAll(".slide_img img")
+const slide_img = document.querySelectorAll(".slide_img img");
 const backwardsBtn = document.querySelector('.backwards');
 const slider = document.querySelector(".slider_container");
 
-const isTouch = ('ontouchstart' in window)||(navigator.maxTouchPoints > 0)||(navigator.msMaxTouchPoints > 0);
-if (isTouch)
-	document.querySelectorAll(".slide_img").forEach(slide => slide.classList.add('touch_img'))
-else
-	document.querySelectorAll(".slide_img").forEach(slide => slide.classList.remove('touch_img'))
-
+let isTouch;
 let activeSlide = 0;
 
 //helper функция для предотвращения множестевнного скролла
@@ -132,7 +127,16 @@ function checkDirection() {
 	return isUp;
 }
 
-
+function setPageFunctions(){
+	isTouch = ('ontouchstart' in window)||(navigator.maxTouchPoints > 0)||(navigator.msMaxTouchPoints > 0);
+	if (isTouch || window.innerHeight < 701){
+		document.querySelectorAll(".slide_img").forEach(slide => slide.classList.add('touch_img'))
+		document.removeEventListener('mousemove', handleMove);
+		slide_img[activeSlide].style.transform = `translate(${0}vw)`;
+	}
+	else
+		document.querySelectorAll(".slide_img").forEach(slide => slide.classList.remove('touch_img'))
+}
 
 function setListeners(){
 	//check if its touch device
@@ -152,6 +156,9 @@ function setListeners(){
 		slider.addEventListener('wheel', throttledHandleScroll); // Событие скролл для desktop
 		document.addEventListener('mousemove', handleMove); //двигаем картинку при движении мыши
 	}
-}
 
+	window.addEventListener('resize', setPageFunctions);
+}
+setPageFunctions();
 setListeners();
+
