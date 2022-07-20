@@ -34,22 +34,24 @@ body {
 	&_text {
 		z-index: 1;
 		background-color: rgb(175, 177, 140);
-		width: 40vw;
+		min-width: 40vw;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 	}
 	&_img {
-		position: absolute;
-		right: -10vw;
+		position: static;
+		right: 0;
 		z-index: 0;
-		max-width: 100vw;
-		height: 100vh;
+
+		min-height: 100vh;
 		background: center no-repeat url(https://www.hermes-parkerconcrete.com/wp-content/uploads/2020/11/services-no-image.png);
 		background-size: cover;
 		img {
-			width: 100%;
+			position: absolute;
+			right: -10vh;
+			width: 80vw;
 			height: 100%;
 			object-fit: cover;
 			object-position: center center;
@@ -99,8 +101,8 @@ body {
 	border-radius: 20%;
 
 	img{
-		width: 3vw;
-		height: 3vh;
+		width: 60px;
+		height: 30px;
 		cursor: pointer;
 
 	}
@@ -142,7 +144,7 @@ body {
 		&_text{
 			padding: 0 20px;
 			width:100vw;
-			height: 30vh;
+			min-height: 30vh;
 			flex-direction: row;
 		}
 		&_title{
@@ -156,4 +158,9 @@ body {
 			height: 70vh;
 		}
 	}
+}
+.touch_img img{
+	position: static;
+	r:0;
+	width: 100%;
 }

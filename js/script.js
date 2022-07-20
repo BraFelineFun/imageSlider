@@ -6,6 +6,10 @@ const backwardsBtn = document.querySelector('.backwards');
 const slider = document.querySelector(".slider_container");
 
 const isTouch = ('ontouchstart' in window)||(navigator.maxTouchPoints > 0)||(navigator.msMaxTouchPoints > 0);
+if (isTouch)
+	document.querySelectorAll(".slide_img").forEach(slide => slide.classList.add('touch_img'))
+else
+	document.querySelectorAll(".slide_img").forEach(slide => slide.classList.remove('touch_img'))
 
 let activeSlide = 0;
 
@@ -133,12 +137,12 @@ function checkDirection() {
 function setListeners(){
 	//check if its touch device
 	if (isTouch){
-		document.addEventListener('touchstart', e => {
+		slider.addEventListener('touchstart', e => {
 			touchstartY = e.changedTouches[0].screenY;
 			touchstartX = e.changedTouches[0].screenX;
 		})
 
-		document.addEventListener('touchend', e => {
+		slider.addEventListener('touchend', e => {
 			touchendY = e.changedTouches[0].screenY;
 			touchendX = e.changedTouches[0].screenX;
 			throttledHandleScroll(e);
